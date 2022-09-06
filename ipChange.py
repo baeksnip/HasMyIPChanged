@@ -16,7 +16,7 @@ import smtplib, ssl
 import config
 
 #Retrieve the previous IP from the local file
-ipOld = open('ipOld.txt', 'r')
+ipOld = open('/ABSOLUTE/ROUTE/TO/FILE/ipOld.txt', 'r')
 ipOld = (ipOld.read())
 ipOld = ipOld.replace("\n","")
 
@@ -29,7 +29,7 @@ ipActive = str(ipActive).replace("'","")
 #Compare the active ip with the previous one
 if (ipActive != ipOld):
         #If it has changed, I update the ipActive in the local file
-        newIp=open("ipOld.txt", "w")
+        newIp=open("/ABSOLUTE/ROUTE/TO/FILE/ipOld.txt", "w")
         newIp.write(ipActive)
         newIp.close()
         #Mail
