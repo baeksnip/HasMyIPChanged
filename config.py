@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+file_old_ip = "/ABSOLUTE/ROUTE/TO/FILE/ipOld.txt"
 username = ""
 password = ""
 smtp_server = ""
