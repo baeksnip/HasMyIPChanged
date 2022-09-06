@@ -15,10 +15,8 @@ import requests
 import smtplib, ssl
 import config
 
-file_old_ip = "/ABSOLUTE/ROUTE/TO/FILE/ipOld.txt"
-
 #Retrieve the previous IP from the local file
-ipOld = open(file_old_ip, 'r')
+ipOld = open(config.file_old_ip, 'r')
 ipOld = (ipOld.read())
 ipOld = ipOld.replace("\n","")
 
@@ -31,7 +29,7 @@ ipActive = str(ipActive).replace("'","")
 #Compare the active ip with the previous one
 if (ipActive != ipOld):
         #If it has changed, I update the ipActive in the local file
-        newIp=open(file_old_ip, "w")
+        newIp=open(config.file_old_ip, "w")
         newIp.write(ipActive)
         newIp.close()
         #Mail
@@ -41,7 +39,6 @@ if (ipActive != ipOld):
         receiver_email = config.receiver_email
         password=config.password
         from_address = config.from_address
-
         message = """From: """ + from_address + """
         To: """ + receiver_email + """
 Subject: The IP has changed
