@@ -5,9 +5,7 @@ This is a simple utility that I needed in my day to day, which informs me by mai
 
 By automating the script it alerts you by email when the public IP changes
 
-For example with crontab I would check every 5 minutes
-
-*/5 * * * * /ROUTE_TO/ipChange.py
+For example with crontab I would check every 5 minutes: */5 * * * * /ROUTE_TO/ipChange.py
 
 The script consists of two python files and a text file to store the previous ip:
 
