@@ -33,7 +33,7 @@ if (ipActive != ipOld):
         newIp.write(ipActive)
         newIp.close()
         #Mail
-        port = 465
+        port = config.port
         smtp_server = config.smtp_server
         sender_email = config.username
         receiver_email = config.receiver_email
