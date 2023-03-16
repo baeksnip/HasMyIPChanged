@@ -20,7 +20,13 @@ ipOld = open(config.file_old_ip, 'r')
 ipOld = (ipOld.read())
 ipOld = ipOld.replace("\n","")
 
-#Find the current ip
+#Find out the IP address with one of the two alternatives, comment the one you don't use
+
+############## Alternative 1: Self service ###############
+requests.get("URL/index.php")
+response = requests.get("URL/ip.txt") #Self website
+
+############## Alternative 2: External service ###############
 response = requests.get("http://whatismyip.akamai.com/")
 ipActive = str(response.content)
 ipActive = str(ipActive).replace("b'","")
